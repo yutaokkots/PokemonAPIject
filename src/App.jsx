@@ -12,7 +12,7 @@ function App() {
       <DndProvider backend={MultiBackend} options={HTML5toTouch}>
       <div className="font-pokeFont">
         <Routes>
-        <Route path="/" element={<CardRender />} />
+          <Route path="/" element={<CardRender />} />
         </Routes>
       </div>
       </DndProvider>
