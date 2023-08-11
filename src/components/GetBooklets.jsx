@@ -3,6 +3,9 @@ import axios from "axios";
 import DraggablePictureTwo from "./DraggablePictureTwo";
 import { ToastContainer, toast } from "react-toastify";
 
+//const serverAddress = import.meta.env.VITE_PROD_URL
+const serverAddress = import.meta.env.VITE_DEV_URL
+
 export default function GetBooklets({ bookletData }) {
   let temp = [];
   for (let i = 0; i < bookletData.length; i++) {
@@ -14,7 +17,7 @@ export default function GetBooklets({ bookletData }) {
           <button
             onClick={() =>
               axios.delete(
-                `https://pokeapijectbackend.onrender.com/api/booklet/${booklet.id}`
+                `${serverAddress}/${booklet.id}`
               ).then((res) => {
                 toast("Booklet deleted successfully!");
                 e.preventDefault();
